@@ -1,0 +1,158 @@
+{
+  "fiqh_system": {
+    "mazhab": "Asy-Syafi'i",
+    "version": "1.0.0",
+    "primary_references": [
+      "Safinatun Najah (Salim bin Sumair al-Hadhrami)",
+      "Fathul Qarib al-Mujib (Ibnu Qasim al-Ghazi)",
+      "Al-Majmu' Syarah al-Muhadzdzab (Imam an-Nawawi)",
+      "Risalatul Mahid (K.H. Muhammad Ardani / Mas'ud bin Mas'ud al-Kandani)"
+    ]
+  },
+  "blood_types": [
+    {
+      "id": "haid",
+      "arabic": "حَيْض",
+      "transliteration": "Ḥaiḍ",
+      "title": "Darah Haid (Menstruasi)",
+      "definition": "Darah yang keluar dari pangkal rahim wanita secara alami dalam keadaan sehat, bukan karena melahirkan atau penyakit.",
+      "boundaries": {
+        "minimal_hours": 24,
+        "ghalib_days": 7,
+        "maximal_days": 15,
+        "minimal_purity_days": 15
+      },
+      "prohibitions": [
+        "Mengerjakan Shalat (Fardhu & Sunnah)",
+        "Mengerjakan Puasa (Wajib qadha di luar Ramadhan)",
+        "Thawaf di Ka'bah",
+        "Menyentuh atau Membawa Mushaf Al-Qur'an",
+        "Membaca Al-Qur'an dengan niat qira'ah",
+        "Berdiam diri (I'tikaf) di masjid",
+        "Jima' (hubungan intim suami-istri)",
+        "Istimta' (bercumbu di antara pusar dan lutut tanpa tabir)"
+      ],
+      "dalil": "Al-Baqarah: 222; HR. Abu Dawud no. 286 (Darah haid adalah darah hitam yang telah dikenal)."
+    },
+    {
+      "id": "nifas",
+      "arabic": "نِفَاس",
+      "transliteration": "Nifās",
+      "title": "Darah Nifas (Pascamelahirkan)",
+      "definition": "Darah yang keluar dari rahim wanita setelah proses persalinan tuntas secara sempurna.",
+      "boundaries": {
+        "minimal": "Lahdzah (sekejap)",
+        "ghalib_days": 40,
+        "maximal_days": 60
+      },
+      "prohibitions": [
+        "Sama seperti larangan pada waktu Haid (8 larangan utama)"
+      ],
+      "dalil": "Fathul Qarib al-Mujib: Wan-nifāsu huwad-damul-khāriju 'aqibal-wilādah."
+    },
+    {
+      "id": "istihadhah",
+      "arabic": "اِسْتِحَاضَة",
+      "transliteration": "Istiḥāḍah",
+      "title": "Darah Istihadhah (Penyakit / Flek Abnormal)",
+      "definition": "Darah yang keluar di luar waktu kebiasaan dan batas waktu syar'i haid atau nifas akibat pecahnya pembuluh darah ('adzil).",
+      "boundaries": {
+        "notes": "Keluar melebihi 15 hari atau keluar di masa jeda suci kurang dari 15 hari."
+      },
+      "hukum": {
+        "ibadah": "TIDAK ADA LARANGAN IBADAH. Wajib tetap shalat, puasa, dan halal bergaul dengan suami.",
+        "syarat_shalat": [
+          "Membasuh kemaluan sebelum shalat",
+          "Membalut kemaluan dengan kain/pembalut",
+          "Berwudhu setiap kali masuk waktu shalat fardhu (Da'im al-Hadats)",
+          "Segera shalat tanpa menunda-nunda"
+        ]
+      },
+      "dalil": "HR. Bukhari no. 327 (Itu hanyalah darah pembuluh penyakit, bukan haid)."
+    }
+  ],
+  "colors_hierarchy": [
+    {
+      "id": "aswad",
+      "name": "Aswad (Hitam)",
+      "arabic": "أَسْوَد",
+      "level": 1,
+      "color_hex": "#1e1b18",
+      "description": "Darah paling kuat menurut ijma' ulama madzhab Syafi'i."
+    },
+    {
+      "id": "ahmar",
+      "name": "Ahmar (Merah)",
+      "arabic": "أَحْمَر",
+      "level": 2,
+      "color_hex": "#b91c1c",
+      "description": "Darah merah alami, level kekuatan kedua."
+    },
+    {
+      "id": "asyqar",
+      "name": "Asyqar (Cokelat/Kemerahan)",
+      "arabic": "أَشْقَر",
+      "level": 3,
+      "color_hex": "#854d0e",
+      "description": "Warna kemerahan bercampur kekuningan/cokelat."
+    },
+    {
+      "id": "ashfar",
+      "name": "Ashfar (Kuning)",
+      "arabic": "أَصْفَر",
+      "level": 4,
+      "color_hex": "#ca8a04",
+      "description": "Cairan kuning seperti nanah/air luka."
+    },
+    {
+      "id": "akdar",
+      "name": "Akdar (Keruh/Muddy)",
+      "arabic": "أَكْدَر",
+      "level": 5,
+      "color_hex": "#78716c",
+      "description": "Cairan keruh keputihan kotor, level paling lemah."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Al-Qashshah Al-Baidha'",
+      "arabic": "القَصَّة البَيْضَاء",
+      "meaning": "Cairan putih bening seperti kapur/putih telur yang keluar saat rahim bersih total dari darah haid. Tanda pasti suci."
+    },
+    {
+      "term": "Al-Jufuf",
+      "arabic": "الجُفُوف",
+      "meaning": "Kondisi kering sempurna: saat kapas dimasukkan ke celah kemaluan, tidak ada sisa noda darah, cokelat, atau kuning."
+    },
+    {
+      "term": "Mubtadi'ah",
+      "arabic": "المُبْتَدِأَة",
+      "meaning": "Wanita yang baru pertama kali mengalami haid sepanjang hidupnya."
+    },
+    {
+      "term": "Mu'tadah",
+      "arabic": "المُعْتَادَة",
+      "meaning": "Wanita yang sudah memiliki riwayat siklus haid dan masa suci yang berulang."
+    },
+    {
+      "term": "Mumayyazah",
+      "arabic": "المُمَيِّزَة",
+      "meaning": "Wanita yang darahnya keluar lebih dari satu jenis (kuat dan lemah) serta memenuhi syarat tamyiz."
+    },
+    {
+      "term": "Ghayru Mumayyazah",
+      "arabic": "غَيْرُ المُمَيِّزَة",
+      "meaning": "Wanita yang darahnya satu warna seragam atau tidak memenuhi kriteria tamyiz."
+    },
+    {
+      "term": "Qaul As-Sahbu",
+      "arabic": "قَوْلُ السَّحْب",
+      "meaning": "Pendapat madzhab Syafi'i bahwa hari-hari kering di sela masa haid dalam 15 hari tetap ditarik dihukumi sebagai waktu haid."
+    },
+    {
+      "term": "Qaul Al-Laqathu",
+      "arabic": "قَوْلُ اللَّقْط",
+      "meaning": "Pendapat madzhab Syafi'i bahwa hanya hari keluarnya darah yang haid, sedangkan hari kering di sela-selanya adalah suci."
+    }
+  ]
+}
