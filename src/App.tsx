@@ -17,7 +17,8 @@ import {
   Download,
   ChevronDown,
   ChevronUp,
-  FolderClock
+  FolderClock,
+  Lightbulb
 } from 'lucide-react';
 
 import fiqhData from './data/fiqh-knowledge.json';
@@ -25,6 +26,7 @@ import { evaluateFiqhCycle, calculatePrayerQadha } from './core/fiqh/fiqh-engine
 import type { BloodEntry, BloodColor, UserProfile, FlowIntensity, ArchivedCycle } from './core/fiqh/types';
 import AssessmentWizard from './components/AssessmentWizard';
 import FiqhVerificationView from './components/FiqhVerificationView';
+import UserGuideView from './components/UserGuideView';
 
 export default function App() {
   // User Profile
@@ -96,7 +98,7 @@ export default function App() {
   const [durationInput, setDurationInput] = useState<number>(24);
 
   // Active Tab
-  const [activeTab, setActiveTab] = useState<'tracker' | 'assessment' | 'history' | 'wizard' | 'verification' | 'knowledge' | 'glossary'>('tracker');
+  const [activeTab, setActiveTab] = useState<'tracker' | 'guide' | 'assessment' | 'history' | 'wizard' | 'verification' | 'knowledge' | 'glossary'>('tracker');
   const [expandedCycleId, setExpandedCycleId] = useState<string | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
@@ -218,6 +220,18 @@ export default function App() {
           </div>
           <div className="flex items-center gap-2">
             <button
+              onClick={() => setActiveTab('guide')}
+              title="Buka Panduan Lengkap Penggunaan Aplikasi"
+              className={`flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg border transition-all ${
+                activeTab === 'guide'
+                  ? 'bg-white text-rose-700 border-white shadow-sm'
+                  : 'bg-white/20 hover:bg-white/30 text-white border-white/30'
+              }`}
+            >
+              <BookOpen className="w-3.5 h-3.5" />
+              <span>Panduan Aplikasi</span>
+            </button>
+            <button
               onClick={handleExportData}
               title="Cadangkan / Ekspor Data Riwayat"
               className="flex items-center gap-1.5 text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg border border-white/20 transition-colors"
@@ -248,6 +262,17 @@ export default function App() {
           >
             <Calendar className="w-4 h-4" />
             <span>Pelacak Harian</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('guide')}
+            className={`px-4 py-2 text-sm font-medium border-b-2 transition-all flex items-center gap-2 whitespace-nowrap ${
+              activeTab === 'guide'
+                ? 'border-white text-white'
+                : 'border-transparent text-rose-100 hover:text-white'
+            }`}
+          >
+            <BookOpen className="w-4 h-4 text-amber-300" />
+            <span>Panduan Penggunaan</span>
           </button>
           <button
             onClick={() => setActiveTab('assessment')}
@@ -327,6 +352,11 @@ export default function App() {
           </div>
         )}
 
+        {/* USER GUIDE TAB */}
+        {activeTab === 'guide' && (
+          <UserGuideView />
+        )}
+
         {/* ASSESSMENT TAB (ChatGPTSynergy) */}
         {activeTab === 'assessment' && (
           <AssessmentWizard onApplyToTracker={handleApplyFromAssessment} />
@@ -335,6 +365,21 @@ export default function App() {
         {/* TRACKER TAB */}
         {activeTab === 'tracker' && (
           <div className="space-y-6">
+            {/* Quick Helper Banner */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 bg-amber-50/80 border border-amber-200/80 px-4 py-2.5 rounded-2xl text-xs text-amber-900 shadow-xs">
+              <span className="flex items-center gap-2 font-medium">
+                <Lightbulb className="w-4 h-4 text-amber-600 shrink-0" />
+                <span>Baru pertama kali menggunakan aplikasi? Pelajari cara pencatatan dan membaca status ibadah.</span>
+              </span>
+              <button
+                type="button"
+                onClick={() => setActiveTab('guide')}
+                className="font-bold underline text-amber-900 hover:text-amber-700 whitespace-nowrap text-xs"
+              >
+                Buka Panduan Lengkap ➔
+              </button>
+            </div>
+
             {/* Quick Assessment Banner */}
             <div className="bg-gradient-to-r from-emerald-900 via-teal-900 to-[#173f35] text-white p-4 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-xs">
               <div className="flex items-center gap-3">
